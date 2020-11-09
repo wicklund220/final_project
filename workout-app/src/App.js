@@ -9,6 +9,7 @@ import GoalsContainer from './components/GoalsContainer'
 import CreateWorkout from './components/CreateWorkout';
 import CreateGoal from './components/CreateGoal';
 import Music from './components/Music';
+import Home from './components/Home'
 
 class App extends Component {
   constructor(props) {
@@ -17,12 +18,18 @@ class App extends Component {
     this.state = {
       workouts: [
         {
-          title: ''
+          title: 'workout1',
+          lift: {
+            name: 'lift1',
+            sets: 0,
+            reps: 0,
+            weight: 0
+          }
         }
       ],
       goals: [
         {
-          title: 'test'
+          title: ''
         }
       ]
     }
@@ -54,6 +61,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
+          <Route exact path = '/' render = { (props) => {
+            return <Home />
+          }} />
           <Route path='/workouts' render = { (props) => {
             return <WorkoutsContainer
               workouts = {this.state.workouts}

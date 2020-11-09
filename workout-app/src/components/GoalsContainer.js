@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import { Link } from 'react-router-dom'
+
 import Goals from './Goals'
 
 class GoalsContainer extends Component {
@@ -25,6 +27,7 @@ class GoalsContainer extends Component {
                         />
                     })}
                 </section>
+                <Link to = '/goals/create'>Create Goal</Link>
             </div>
         )
     }
