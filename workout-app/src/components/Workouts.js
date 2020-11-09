@@ -14,7 +14,8 @@ class Workouts extends Component {
     render() {
         return(
             <div>
-
+                <h1>Your Workouts</h1>
+                
             </div>
         )
     }

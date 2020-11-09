@@ -14,6 +14,7 @@ class Goals extends Component {
     render() {
         return(
             <div>
+                <h1>Your Goals</h1>
                 
             </div>
         )

@@ -1,7 +1,11 @@
 import './App.css';
 import React, {Component} from 'react'
 
+import { Route, Link, withRouter } from 'react-router-dom'
+
 import Header from './components/Header'
+import Workouts from './components/Workouts'
+import Goals from './components/Goals'
 
 class App extends Component {
   constructor(props) {
@@ -18,9 +22,15 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <nav>
+        <main>
+          <Route path='/workouts' render = { (props) => {
+            return <Workouts />
+          }} />
           
-        </nav>
+          <Route path = '/goals' render = { (props) => {
+            return <Goals />
+          }} />
+        </main>
       </div>
     );
   }
