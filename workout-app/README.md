@@ -33,3 +33,4 @@ Create a fully functional react app that allows users to create and store workou
 Allow users to see other users workouts
 Add workout reminders to outlook or similar calendar application from app
 Import Google maps to show user where nearby gyms are located
+Allow users to upload progress photos onto their profile and/or goals page with a file uploader rather than a url
