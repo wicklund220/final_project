@@ -5,16 +5,27 @@ class CreateGoal extends Component {
         super(props)
 
         this.state = {
-
+            title: '',
         }
     }
 
-
+    onChange = (event) => {
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
     render() {
         return(
-            <form>
-
+            <form onSubmit = {(event) => {this.props.onSubmit(event, this.state)}}>
+                <input 
+                type = 'text'
+                name = 'title'
+                placeholder = 'goal'
+                onChange = {this.onChange}
+                />
+                <input type='submit' value='submit' />
             </form>
         )
     }

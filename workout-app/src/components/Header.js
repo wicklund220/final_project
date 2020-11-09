@@ -9,6 +9,7 @@ function Header() {
             <nav className='header-links'>
                 <Link to = '/workouts'>Workouts</Link>
                 <Link to = '/goals'>Goals</Link>
+                <Link to = '/music'>Music</Link>
             </nav>
         </div>
     )

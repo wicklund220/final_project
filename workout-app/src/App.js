@@ -5,9 +5,10 @@ import { Route, withRouter } from 'react-router-dom'
 
 import Header from './components/Header'
 import WorkoutsContainer from './components/WorkoutsContainer'
-import Goals from './components/Goals'
+import GoalsContainer from './components/GoalsContainer'
 import CreateWorkout from './components/CreateWorkout';
 import CreateGoal from './components/CreateGoal';
+import Music from './components/Music';
 
 class App extends Component {
   constructor(props) {
@@ -18,11 +19,16 @@ class App extends Component {
         {
           title: ''
         }
+      ],
+      goals: [
+        {
+          title: 'test'
+        }
       ]
     }
   }
 
-  onSubmit = (event, info) => {
+  submitWorkout = (event, info) => {
     event.preventDefault();
     const workouts = this.state.workouts;
     workouts.push(info);
@@ -30,6 +36,16 @@ class App extends Component {
       workouts: workouts
     })
     this.props.history.push('/workouts')
+  }
+
+  submitGoal = (event, info) => {
+    event.preventDefault();
+    const goals = this.state.goals;
+    goals.push(info);
+    this.setState({
+      goals: goals
+    })
+    this.props.history.push('/goals')
   }
 
 
@@ -46,16 +62,22 @@ class App extends Component {
           }} />
 
           <Route path = '/workouts/create' render = { (props) => {
-            return <CreateWorkout onSubmit = {this.onSubmit}/>
+            return <CreateWorkout onSubmit = {this.submitWorkout}/>
           }} />
           
           <Route path = '/goals' render = { (props) => {
-            return <Goals />
+            return <GoalsContainer 
+              goals = {this.state.goals}
+            />
           }} />
 
-          <Route paht = '/goals/create' render = { (props) => {
-            return <CreateGoal />
+          <Route path = '/goals/create' render = { (props) => {
+            return <CreateGoal onSubmit = {this.submitGoal}/>
           }} />
+
+          <Route path = '/music' render = { (props) => {
+            return <Music />
+          }} />        
         </main>
       </div>
     );
