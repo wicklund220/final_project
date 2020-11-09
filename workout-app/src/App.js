@@ -29,7 +29,10 @@ class App extends Component {
       ],
       goals: [
         {
-          title: ''
+          title: '',
+          description: '',
+          // date: 12/12/2020,
+          date: ''
         }
       ]
     }

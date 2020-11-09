@@ -6,6 +6,8 @@ class CreateGoal extends Component {
 
         this.state = {
             title: '',
+            description: '',
+            date: ''
         }
     }
 
@@ -23,6 +25,18 @@ class CreateGoal extends Component {
                 type = 'text'
                 name = 'title'
                 placeholder = 'goal'
+                onChange = {this.onChange}
+                />
+                <input
+                type = 'text'
+                name = 'description'
+                placeholder = 'description'
+                onChange = {this.onChange} 
+                />
+                <input
+                type = 'text'
+                name = 'date'
+                placeholder = 'target date'
                 onChange = {this.onChange}
                 />
                 <input type='submit' value='submit' />
