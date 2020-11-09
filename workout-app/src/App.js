@@ -1,6 +1,8 @@
 import './App.css';
 import React, {Component} from 'react'
 
+import Header from './components/Header'
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -15,7 +17,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Workout app working</h1>
+        <Header />
+        <nav>
+          
+        </nav>
       </div>
     );
   }
