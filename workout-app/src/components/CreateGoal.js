@@ -7,7 +7,8 @@ class CreateGoal extends Component {
         this.state = {
             title: '',
             description: '',
-            date: ''
+            date: '',
+            file: ''
         }
     }
 
@@ -39,6 +40,7 @@ class CreateGoal extends Component {
                 placeholder = 'target date'
                 onChange = {this.onChange}
                 />
+                <input type = 'file' name = 'file'/>
                 <input type='submit' value='submit' />
             </form>
         )

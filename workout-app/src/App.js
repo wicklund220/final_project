@@ -32,7 +32,8 @@ class App extends Component {
           title: '',
           description: '',
           // date: 12/12/2020,
-          date: ''
+          date: '',
+          file: ''
         }
       ]
     }
