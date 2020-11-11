@@ -12,7 +12,8 @@ import Music from './components/Music';
 import Home from './components/Home';
 import SignupForm from './components/SignupForm'
 import LoginForm from './components/LoginForm'
-import { loginUser, signupUser, verifyUser } from './services/api_helper';
+import Profile from './components/Profile'
+import { loginUser, signupUser, userProfile, verifyUser } from './services/api_helper';
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class App extends Component {
         }
       ],
       currentUser: null,
+      profile: null
     }
   }
 
@@ -80,7 +82,7 @@ class App extends Component {
     this.setState({
       currentUser: currentUser
     })
-    this.props.history.push('/');
+    this.props.history.push('/profile');
   }
 
   handleVerify = async () => {
@@ -91,6 +93,15 @@ class App extends Component {
       })
       this.props.history.push('/')
     }
+  }
+
+  renderProfile = async (event, userData) => {
+    event.preventDefault()
+    const profile = await userProfile(userData);
+    console.log(profile);
+    this.setState({
+      profile: profile.data
+    })
   }
 
   componentDidMount() {
@@ -104,6 +115,8 @@ class App extends Component {
     })
     this.props.history.push('/login')
   }
+
+ 
 
   render() {
     return (
@@ -147,6 +160,12 @@ class App extends Component {
           <Route path = '/login' render = { (props) => {
             return <LoginForm handleLogin = {this.handleLogin} 
             currentUser = {this.state.currentUser}/>
+          }} />
+
+          <Route path = '/profile' render = { (props) => {
+            return <Profile profile = {this.state.profile}
+            currentUser = {this.state.currentUser} 
+            renderProfile = {this.renderProfile}/>
           }} />
         </main>
       </div>

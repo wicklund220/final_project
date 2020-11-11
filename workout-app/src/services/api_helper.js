@@ -35,5 +35,6 @@ export const verifyUser = async () => {
 //localhost:3001/profile/:userId
 export const userProfile = async(userData) => {
     const response = await api.get('/profile', userData);
+    console.log(response);
     return response.data
 }
