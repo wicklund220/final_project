@@ -9,7 +9,9 @@ import GoalsContainer from './components/GoalsContainer'
 import CreateWorkout from './components/CreateWorkout';
 import CreateGoal from './components/CreateGoal';
 import Music from './components/Music';
-import Home from './components/Home'
+import Home from './components/Home';
+import SignupForm from './components/SignupForm'
+import { signupUser } from './services/api_helper';
 
 class App extends Component {
   constructor(props) {
@@ -59,6 +61,14 @@ class App extends Component {
     this.props.history.push('/goals')
   }
 
+  handleSignup = async (event, signupData) => {
+    event.preventDefault();
+    const currentUser = await signupUser(signupData);
+    this.setState({
+      currentUser: currentUser
+    })
+    this.props.history.push('/');
+  }
 
   render() {
     return (
@@ -91,7 +101,11 @@ class App extends Component {
 
           <Route path = '/music' render = { (props) => {
             return <Music />
-          }} />        
+          }} />     
+
+          <Route path = '/signup' render = { (props) => {
+            return <SignupForm handleSignup = {this.handleSignup}/>
+          }}    />
         </main>
       </div>
     );
