@@ -9,6 +9,8 @@ class SignupForm extends Component {
         this.state = {
             username: '',
             password: '',
+            name: '',
+            bio: '',
         }
     }
 
@@ -32,6 +34,18 @@ class SignupForm extends Component {
                 type = 'password'
                 name = 'password'
                 placeholder = 'password'
+                onChange = {this.onChange}
+                />
+                <input
+                type = 'text'
+                name = 'name'
+                placeholder = 'name'
+                onChange = {this.onChange}
+                />
+                <input
+                type = 'textarea'
+                name = 'bio'
+                placeholder = 'bio'
                 onChange = {this.onChange}
                 />
                 <input type = 'submit' value = 'Sign Up' />

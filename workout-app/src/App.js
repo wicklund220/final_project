@@ -65,6 +65,7 @@ class App extends Component {
   handleSignup = async (event, signupData) => {
     event.preventDefault();
     const currentUser = await signupUser(signupData);
+    console.log(currentUser);
     this.setState({
       currentUser: currentUser
     })
