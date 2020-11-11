@@ -12,7 +12,7 @@ import Music from './components/Music';
 import Home from './components/Home';
 import SignupForm from './components/SignupForm'
 import LoginForm from './components/LoginForm'
-import { loginUser, signupUser } from './services/api_helper';
+import { loginUser, signupUser, verifyUser } from './services/api_helper';
 
 class App extends Component {
   constructor(props) {
@@ -76,10 +76,25 @@ class App extends Component {
   handleLogin = async (event, loginData) => {
     event.preventDefault();
     const currentUser = await loginUser(loginData);
+    console.log(currentUser)
     this.setState({
       currentUser: currentUser
     })
-    this.props.history.push('/');
+    // this.props.history.push('/');
+  }
+
+  handleVerify = async () => {
+    const currentUser = await verifyUser();
+    if(currentUser){
+      this.setState({
+        currentUser: currentUser
+      })
+      this.props.history.push('/')
+    }
+  }
+
+  componentDidMount() {
+    this.handleVerify();
   }
 
   render() {
