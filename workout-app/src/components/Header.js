@@ -7,9 +7,9 @@ function Header(props) {
         <div>
             <Link to = '/'>Workout App</Link>
             <nav className='header-links'>
-                <Link to = '/workouts'>Workouts</Link>
-                <Link to = '/goals'>Goals</Link>
-                <Link to = '/music'>Music</Link>
+                {props.currentUser && <Link to = '/workouts'>Workouts</Link>}
+                {props.currentUser && <Link to = '/goals'>Goals</Link>}
+                {props.currentUser && <Link to = '/music'>Music</Link>}
                 {!props.currentUser ? <Link to ='/login'>Log In</Link> : null}
                 {props.currentUser && <p>Welcome, <Link to ='/profile'>{props.currentUser.username}</Link></p>}
                 {props.currentUser && <button onClick = {props.handleLogout}>Logout</button>}
