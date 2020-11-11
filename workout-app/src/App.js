@@ -37,7 +37,8 @@ class App extends Component {
           date: '',
           file: ''
         }
-      ]
+      ],
+      currentUser: null,
     }
   }
 
@@ -73,7 +74,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header currentUser = {this.state.currentUser}/>
         <main>
           <Route exact path = '/' render = { (props) => {
             return <Home />
