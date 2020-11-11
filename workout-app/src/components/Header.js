@@ -12,6 +12,7 @@ function Header(props) {
                 <Link to = '/music'>Music</Link>
                 {!props.currentUser ? <Link to ='/login'>Log In</Link> : null}
                 {props.currentUser && <p>Welcome, {props.currentUser.username}</p>}
+                {props.currentUser && <button onClick = {props.handleLogout}>Logout</button>}
             </nav>
         </div>
     )

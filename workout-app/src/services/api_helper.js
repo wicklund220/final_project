@@ -29,3 +29,11 @@ export const verifyUser = async () => {
     }
     return false
 }
+
+// === User ===
+
+//localhost:3001/profile/:userId
+export const userProfile = async(userData) => {
+    const response = await api.get('/profile', userData);
+    return response.data
+}

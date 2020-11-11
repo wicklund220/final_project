@@ -80,7 +80,7 @@ class App extends Component {
     this.setState({
       currentUser: currentUser
     })
-    // this.props.history.push('/');
+    this.props.history.push('/');
   }
 
   handleVerify = async () => {
@@ -97,10 +97,19 @@ class App extends Component {
     this.handleVerify();
   }
 
+  handleLogout = () => {
+    localStorage.removeItem('authToken');
+    this.setState({
+      currentUser: null
+    })
+    this.props.history.push('/login')
+  }
+
   render() {
     return (
       <div className="App">
-        <Header currentUser = {this.state.currentUser}/>
+        <Header currentUser = {this.state.currentUser}
+          handleLogout = {this.handleLogout}/>
         <main>
           <Route exact path = '/' render = { (props) => {
             return <Home />
@@ -131,11 +140,13 @@ class App extends Component {
           }} />     
 
           <Route path = '/signup' render = { (props) => {
-            return <SignupForm handleSignup = {this.handleSignup}/>
+            return <SignupForm handleSignup = {this.handleSignup}
+            currentUser = {this.state.currentUser}/>
           }}    />
 
           <Route path = '/login' render = { (props) => {
-            return <LoginForm handleLogin = {this.handleLogin} />
+            return <LoginForm handleLogin = {this.handleLogin} 
+            currentUser = {this.state.currentUser}/>
           }} />
         </main>
       </div>

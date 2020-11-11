@@ -35,7 +35,11 @@ class LoginForm extends Component {
                 onChange={this.onChange}
                 />
                 <input type='submit' value='Log In'/>
-                <p>Not a member? </p><Link to='/signup'>Sign Up</Link>
+                
+                {!this.props.currentUser && 
+                <div>
+                    <p>Not a member? </p><Link to='/signup'>Sign Up</Link>
+                </div>}
             </form>
         )
     }
