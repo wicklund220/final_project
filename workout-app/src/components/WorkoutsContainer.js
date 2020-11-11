@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import { Route, Link } from 'react-router-dom'
+import { allWorkouts } from '../services/api_helper'
 
 import Workouts from './Workouts'
 
@@ -13,14 +14,23 @@ class WorkoutsContainer extends Component {
         }
     }
 
+    componentDidMount() {
+        this.readAllWorkouts();
+    }
 
+    readAllWorkouts = async () => {
+        const workouts = await allWorkouts();
+        this.setState({
+            workouts: workouts
+        })
+    }
 
     render() {
         return(
             <div>
                 <h1>Your Workouts</h1>
                 <section>
-                   <Route exact path = '/workouts/list' render = {(props) => {
+                   <Route exact path = '/workouts' render = {(props) => {
                        return <Workouts workouts = {this.props.workouts}/>
                    }} />
                 </section>

@@ -41,3 +41,8 @@ export const userProfile = async(userData) => {
 
 // === Workout ===
 
+export const allWorkouts = async () => {
+    const response = await api.get('/workout/user');
+    console.log(response)
+    return response.data
+}
