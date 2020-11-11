@@ -11,7 +11,8 @@ import CreateGoal from './components/CreateGoal';
 import Music from './components/Music';
 import Home from './components/Home';
 import SignupForm from './components/SignupForm'
-import { signupUser } from './services/api_helper';
+import LoginForm from './components/LoginForm'
+import { loginUser, signupUser } from './services/api_helper';
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +66,16 @@ class App extends Component {
   handleSignup = async (event, signupData) => {
     event.preventDefault();
     const currentUser = await signupUser(signupData);
-    console.log(currentUser);
+    // console.log(currentUser);
+    this.setState({
+      currentUser: currentUser
+    })
+    this.props.history.push('/');
+  }
+
+  handleLogin = async (event, loginData) => {
+    event.preventDefault();
+    const currentUser = await loginUser(loginData);
     this.setState({
       currentUser: currentUser
     })
@@ -108,6 +118,10 @@ class App extends Component {
           <Route path = '/signup' render = { (props) => {
             return <SignupForm handleSignup = {this.handleSignup}/>
           }}    />
+
+          <Route path = '/login' render = { (props) => {
+            return <LoginForm handleLogin = {this.handleLogin} />
+          }} />
         </main>
       </div>
     );
