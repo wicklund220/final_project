@@ -22,13 +22,10 @@ class App extends Component {
     this.state = {
       workouts: [
         {
-          title: 'workout1',
-          lift: {
-            name: 'lift1',
-            sets: 0,
-            reps: 0,
-            weight: 0
-          }
+          name: 'lift1',
+          sets: 0,
+          reps: 0,
+          weight: 0
         }
       ],
       goals: [
@@ -130,7 +127,6 @@ class App extends Component {
           <Route path='/workouts' render = { (props) => {
             return <WorkoutsContainer
               workouts = {this.state.workouts}
-
             />
           }} />
 

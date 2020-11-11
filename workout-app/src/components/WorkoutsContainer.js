@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import { Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
 import Workouts from './Workouts'
 
@@ -9,7 +9,7 @@ class WorkoutsContainer extends Component {
         super(props)
 
         this.state = {
-
+            workouts: null,
         }
     }
 
@@ -20,12 +20,9 @@ class WorkoutsContainer extends Component {
             <div>
                 <h1>Your Workouts</h1>
                 <section>
-                    {this.props.workouts.map((workout, index) => {
-                        return <Workouts 
-                            workout = {workout}
-                            key = {index}
-                        />
-                    })}
+                   <Route exact path = '/workouts/list' render = {(props) => {
+                       return <Workouts workouts = {this.props.workouts}/>
+                   }} />
                 </section>
                 <Link to = '/workouts/create'>Create Workout</Link>
             </div>

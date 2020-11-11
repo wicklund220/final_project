@@ -5,13 +5,10 @@ class CreateWorkout extends Component {
         super(props)
 
         this.state = {
-            title: '',
-            lift: {
-                name: '',
-                sets: 0,
-                reps: 0,
-                weight: 0
-            }
+            name: '',
+            sets: 0,
+            reps: 0,
+            weight: 0
         }
     }
 
@@ -31,12 +28,6 @@ class CreateWorkout extends Component {
     render() {
         return(
             <form onSubmit = {(event) => this.props.onSubmit(event, this.state)}>
-                <input 
-                type = 'text'
-                name = 'title'
-                placeholder = 'workout'
-                onChange = {this.onChange}
-                />
                 <input
                 type = 'text'
                 name = 'name'
