@@ -12,7 +12,12 @@ class SignupForm extends Component {
         }
     }
 
-    
+    onChange = (event) => {
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
     render() {
         return(
