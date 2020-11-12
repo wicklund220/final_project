@@ -42,15 +42,15 @@ class App extends Component {
     }
   }
 
-  submitWorkout = (event, info) => {
-    event.preventDefault();
-    const workouts = this.state.workouts;
-    workouts.push(info);
-    this.setState({
-      workouts: workouts
-    })
-    this.props.history.push('/workouts')
-  }
+  // submitWorkout = (event, info) => {
+  //   event.preventDefault();
+  //   const workouts = this.state.workouts;
+  //   workouts.push(info);
+  //   this.setState({
+  //     workouts: workouts
+  //   })
+  //   this.props.history.push('/workouts')
+  // }
 
   submitGoal = (event, info) => {
     event.preventDefault();
@@ -130,9 +130,9 @@ class App extends Component {
             />
           }} />
 
-          <Route path = '/workouts/create' render = { (props) => {
+          {/* <Route path = '/workouts/create' render = { (props) => {
             return <CreateWorkout onSubmit = {this.submitWorkout}/>
-          }} />
+          }} /> */}
           
           <Route path = '/goals' render = { (props) => {
             return <GoalsContainer 

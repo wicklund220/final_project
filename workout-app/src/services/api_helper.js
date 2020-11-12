@@ -47,6 +47,12 @@ export const allWorkouts = async () => {
     return response.data
 }
 
+export const postWorkout = async (workoutData) => {
+    const response = await api.post('/workout/1', workoutData);
+    console.log(response);
+    return response.data
+}
+
 // === Goal ===
 
 export const allGoals = async () => {

@@ -27,7 +27,7 @@ class CreateWorkout extends Component {
 
     render() {
         return(
-            <form onSubmit = {(event) => this.props.onSubmit(event, this.state)}>
+            <form onSubmit = {(event) => this.props.createWorkout(event, this.state)}>
                 <input
                 type = 'text'
                 name = 'name'
