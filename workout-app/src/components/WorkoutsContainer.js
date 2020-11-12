@@ -30,7 +30,7 @@ class WorkoutsContainer extends Component {
             <div>
                 <h1>Your Workouts</h1>
                 <section>
-                   <Route exact path = '/workouts' render = {(props) => {
+                   <Route exact path = '/workouts/1' render = {(props) => {
                        return <Workouts workouts = {this.props.workouts}/>
                    }} />
                 </section>

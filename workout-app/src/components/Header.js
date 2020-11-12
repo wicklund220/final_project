@@ -2,6 +2,11 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
+import { MDCTopAppBar } from '@material/top-app-bar';
+
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = new MDCTopAppBar(topAppBarElement)
+
 function Header(props) {
     return(
         <div>

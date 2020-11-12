@@ -42,7 +42,14 @@ export const userProfile = async(userData) => {
 // === Workout ===
 
 export const allWorkouts = async () => {
-    const response = await api.get('/workout/user');
+    const response = await api.get('/workout/1');
     console.log(response)
+    return response.data
+}
+
+// === Goal ===
+
+export const allGoals = async () => {
+    const response = await api.get('/goal/1');
     return response.data
 }
