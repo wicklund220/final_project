@@ -7,6 +7,8 @@ import Workouts from './Workouts'
 
 import CreateWorkout from './CreateWorkout'
 
+import SingleWorkout from './SingleWorkout'
+
 class WorkoutsContainer extends Component {
     constructor(props) {
         super(props)
@@ -28,14 +30,16 @@ class WorkoutsContainer extends Component {
     }
 
     createWorkout = async(event, workoutData) => {
+        console.log(this.props)
         event.preventDefault();
+        console.log(workoutData)
         const newWorkout = await postWorkout(workoutData);
         const workouts = this.state.workouts;
         const newWorkouts = [...workouts, newWorkout]
         this.setState({
             workouts: newWorkouts
         })
-        this.props.history.push('/workout/1')
+        this.props.history.push('/workout')
     }
 
     render() {
@@ -43,14 +47,23 @@ class WorkoutsContainer extends Component {
             <div>
                 <h1>Your Workouts</h1>
                 <section>
-                   <Route exact path = '/workouts/1' render = {(props) => {
+                   <Route exact path = '/workout' render = {(props) => {
+                       console.log(props)
                        return <Workouts workouts = {this.props.workouts}/>
                    }} />
-                   <Route path = '/workouts/create' render = { (props) => {
+                      <Route exact path = '/workout/single/:id' render = {(props) => {
+                        return <SingleWorkout
+                        workouts={this.state.workouts}
+                        workoutId={props.match.params.id}
+                        />
+                    }} />
+                   <Route exact path = '/workout/create' render = { (props) => {
                         return <CreateWorkout createWorkout = {this.createWorkout}/>
                          }} />
+
+                 
                 </section>
-                <Link to = '/workouts/create'>Create Workout</Link>
+                <Link to = '/workout/create'>Create Workout</Link>
             </div>
         )
     }

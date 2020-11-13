@@ -13,7 +13,7 @@ import Home from './components/Home';
 import SignupForm from './components/SignupForm'
 import LoginForm from './components/LoginForm'
 import Profile from './components/Profile'
-import { loginUser, signupUser, userProfile, verifyUser } from './services/api_helper';
+import { loginUser, signupUser, userProfile, verifyUser, allWorkouts } from './services/api_helper';
 
 class App extends Component {
   constructor(props) {
@@ -79,6 +79,7 @@ class App extends Component {
     this.setState({
       currentUser: currentUser
     })
+    this.getAllWorkouts(currentUser.id);
     this.props.history.push('/profile');
   }
 
@@ -103,6 +104,7 @@ class App extends Component {
 
   componentDidMount() {
     this.handleVerify();
+    this.getAllWorkouts();
   }
 
   handleLogout = () => {
@@ -113,7 +115,14 @@ class App extends Component {
     this.props.history.push('/login')
   }
 
- 
+ getAllWorkouts = async (id) => {
+  //  console.log('testing workouts')
+   const workouts = await allWorkouts(id);
+   console.log(workouts)
+   this.setState({
+     workouts: workouts
+   })
+ }
 
   render() {
     return (
@@ -124,9 +133,10 @@ class App extends Component {
           <Route exact path = '/' render = { (props) => {
             return <Home />
           }} />
-          <Route path='/workouts' render = { (props) => {
+          <Route path='/workout' render = { (props) => {
             return <WorkoutsContainer
               workouts = {this.state.workouts}
+              {...props}
             />
           }} />
 

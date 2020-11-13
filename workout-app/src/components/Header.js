@@ -12,7 +12,7 @@ function Header(props) {
         <div>
             <Link to = '/'>Workout App</Link>
             <nav className='header-links'>
-                {props.currentUser && <Link to = '/workouts'>Workouts</Link>}
+                {props.currentUser && <Link to = '/workout'>Workouts</Link>}
                 {props.currentUser && <Link to = '/goals'>Goals</Link>}
                 {props.currentUser && <Link to = '/music'>Music</Link>}
                 {!props.currentUser ? <Link to ='/login'>Log In</Link> : null}
