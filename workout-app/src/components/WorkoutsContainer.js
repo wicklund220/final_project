@@ -16,7 +16,7 @@ class WorkoutsContainer extends Component {
         this.state = {
             workouts: [
                 {
-                    id: 1,
+                    id: 0,
                     name: 'test',
                     sets: 0,
                     reps: 0,
@@ -32,6 +32,7 @@ class WorkoutsContainer extends Component {
 
     readAllWorkouts = async () => {
         const workouts = await allWorkouts();
+        console.log(workouts);
         this.setState({
             workouts: workouts
         })
@@ -48,7 +49,7 @@ class WorkoutsContainer extends Component {
             workouts: newWorkouts
         })
         console.log(this.state.workouts);
-        this.props.history.push('/workout')
+        this.props.history.push('/workout');
     }
 
     render() {
@@ -61,6 +62,7 @@ class WorkoutsContainer extends Component {
                        return <Workouts workouts = {this.props.workouts}/>
                    }} />
                       <Route exact path = '/workout/single/:id' render = {(props) => {
+                          console.log(this.state)
                         return <SingleWorkout
                         workouts={this.state.workouts}
                         workoutId={props.match.params.id}

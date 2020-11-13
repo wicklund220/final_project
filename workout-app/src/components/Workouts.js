@@ -18,8 +18,13 @@ const Workouts = (props) => {
                             //     <p>Number of Reps: {workout.reps}</p>
                             //     <p>Amount of Weight: {workout.weight} Pounds</p>
                             // </div>
-                           <Link to ={`/workout/single/${workout.id}`} key = {index}><h4>{workout.name}</h4></Link>
-                        )
+                            <div>
+                                <Link to ={`/workout/single/${workout.id}`} key = {index}><h4>{workout.name}</h4></Link>
+                                <p>Sets: {workout.sets}</p>
+                                <p>Reps: {workout.reps}</p>
+                                <p>Weight: {workout.weight}</p>
+                            </div>
+                           )
                 })}
         </div>
     )

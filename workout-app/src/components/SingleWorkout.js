@@ -1,11 +1,17 @@
 import React from 'react';
 
+import { allWorkouts } from '../services/api_helper'
+
 const SingleWorkout = (props) => {
-    console.log(props.workouts, props.workoutId)
-    const currentWorkout = props.workouts.find(workout => workout.id === parseInt(props.workoutId))
+    const test = async() => {
+        const singleWorkout = await allWorkouts(props.workoutId)
+        console.log(singleWorkout)
+    }
+    test()
+    // const currentWorkout = props.workouts.find(workout => workout.id === parseInt(props.workoutId))
     return(
         <div>
-            <h1>{currentWorkout.name}</h1>
+            <h1>{props.workouts.name}</h1>
         </div>
     )
 }

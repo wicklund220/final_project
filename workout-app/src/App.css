@@ -5,9 +5,12 @@
 .header-links {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .header {
   background: darkgrey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
