@@ -16,6 +16,7 @@ class WorkoutsContainer extends Component {
         this.state = {
             workouts: [
                 {
+                    id: 1,
                     name: 'test',
                     sets: 0,
                     reps: 0,
