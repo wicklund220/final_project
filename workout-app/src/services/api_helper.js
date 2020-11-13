@@ -1,11 +1,11 @@
 import axios from 'axios';
-// const api = axios.create({
-//     baseURL: 'https://shielded-ridge-00746.herokuapp.com'
-// })
-
 const api = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: 'https://shielded-ridge-00746.herokuapp.com'
 })
+
+// const api = axios.create({
+//     baseURL: 'http://localhost:3001'
+// })
 
 // === Auth ===
 
@@ -52,7 +52,7 @@ export const allWorkouts = async (id) => {
 }
 
 export const postWorkout = async (workoutData) => {
-    const response = await api.post(`/workout/${workoutData.name}`, workoutData);
+    const response = await api.post(`/workout/1`, workoutData);
     console.log(response);
     return response.data
 }

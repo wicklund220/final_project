@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, withRouter } from 'react-router-dom'
 import { allWorkouts, postWorkout } from '../services/api_helper'
 
 import Workouts from './Workouts'
@@ -14,7 +14,14 @@ class WorkoutsContainer extends Component {
         super(props)
 
         this.state = {
-            workouts: null,
+            workouts: [
+                {
+                    name: 'test',
+                    sets: 0,
+                    reps: 0,
+                    weight: 0
+                }
+            ]
         }
     }
 
@@ -39,6 +46,7 @@ class WorkoutsContainer extends Component {
         this.setState({
             workouts: newWorkouts
         })
+        console.log(this.state.workouts);
         this.props.history.push('/workout')
     }
 
@@ -69,4 +77,4 @@ class WorkoutsContainer extends Component {
     }
 }
 
-export default WorkoutsContainer
+export default withRouter(WorkoutsContainer)
