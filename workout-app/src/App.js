@@ -13,7 +13,8 @@ import Home from './components/Home';
 import SignupForm from './components/SignupForm'
 import LoginForm from './components/LoginForm'
 import Profile from './components/Profile'
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import EditProfile from './components/EditProfile'
 import { loginUser, signupUser, userProfile, verifyUser, allWorkouts } from './services/api_helper';
 
 class App extends Component {
@@ -38,7 +39,7 @@ class App extends Component {
           file: ''
         }
       ],
-      currentUser: null,
+      currentUser: [],
       profile: null
     }
   }
@@ -73,7 +74,16 @@ class App extends Component {
     })
   }
 
-  
+  editUser = (event, info) => {
+    event.preventDefault();
+    let currentUser = this.state.currentUser;
+    currentUser = info
+    // currentUser.push(info);
+    this.setState({
+      currentUser: currentUser
+    })
+    this.props.history.push('/profile')
+  }
 
   handleSignup = async (event, signupData) => {
     event.preventDefault();
@@ -88,10 +98,10 @@ class App extends Component {
   handleLogin = async (event, loginData) => {
     event.preventDefault();
     const currentUser = await loginUser(loginData);
-    console.log(currentUser)
     this.setState({
       currentUser: currentUser
     })
+    console.log(currentUser)
     this.getAllWorkouts(currentUser.id);
     this.props.history.push('/profile');
   }
@@ -186,6 +196,11 @@ class App extends Component {
             return <Profile profile = {this.state.profile}
             currentUser = {this.state.currentUser} 
             renderProfile = {this.renderProfile}/>
+          }} />
+
+          <Route path ='/profile/edit' render = { (props) => {
+            return <EditProfile editUser = {this.editUser} 
+            currentUser = {this.state.currentUser}/>
           }} />
         </main>
         <Footer/ >

@@ -16,11 +16,10 @@ class WorkoutsContainer extends Component {
         this.state = {
             workouts: [
                 {
-                    id: 0,
-                    name: 'test',
-                    sets: 0,
-                    reps: 0,
-                    weight: 0
+                    name: 'Bench Press',
+                    sets: 4,
+                    reps: 10,
+                    weight: 225
                 }
             ]
         }
