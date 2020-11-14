@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import { TextInput, Textarea } from 'evergreen-ui';
+
 class CreateGoal extends Component {
     constructor(props) {
         super(props)
@@ -21,27 +23,24 @@ class CreateGoal extends Component {
 
     render() {
         return(
-            <form onSubmit = {(event) => {this.props.onSubmit(event, this.state)}}>
-                <input 
-                type = 'text'
+            <form className ='goal-form' onSubmit = {(event) => {this.props.onSubmit(event, this.state)}}>
+                Goal Title<TextInput 
                 name = 'title'
-                placeholder = 'goal'
+                placeholder = 'Goal'
                 onChange = {this.onChange}
                 />
-                <input
-                type = 'text'
+                Goal Description<Textarea
                 name = 'description'
-                placeholder = 'description'
+                placeholder = 'Description'
                 onChange = {this.onChange} 
                 />
-                <input
-                type = 'text'
+                Target Date<TextInput
                 name = 'date'
-                placeholder = 'target date'
+                placeholder = 'Target Date'
                 onChange = {this.onChange}
                 />
-                <input type = 'file' name = 'file'/>
-                <input type='submit' value='submit' />
+                {/* <input type = 'file' name = 'file'/> */}
+                <input type='submit' value='Submit' />
             </form>
         )
     }

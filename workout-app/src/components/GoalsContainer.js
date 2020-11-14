@@ -22,8 +22,10 @@ class GoalsContainer extends Component {
                 <section>
                     {this.props.goals.map((goal, index) => {
                         return <Goals 
+                            removeGoal = {this.props.removeGoal}
                             goal = {goal}
                             key = {index}
+                            goalId = {index}
                         />
                     })}
                 </section>

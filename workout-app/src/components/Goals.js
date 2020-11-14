@@ -8,6 +8,7 @@ const Goals = (props) => {
             <p>Goal Description: {props.goal.description}</p>
             <p>Target Date: {props.goal.date}</p>
             <p>Photo: </p> <img src = {props.goal.file} />
+            <button onClick={()=> props.removeGoal(props.goalId)}>Remove</button>
         </div>
     )
 }

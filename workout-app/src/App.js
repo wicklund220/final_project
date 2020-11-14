@@ -62,6 +62,16 @@ class App extends Component {
     this.props.history.push('/goals')
   }
 
+  removeGoal = (goalId) => {
+    const userGoals = this.state.goals;
+    const newGoals1 = userGoals.slice(0, goalId)
+    const newGoals2 = userGoals.slice(goalId + 1, userGoals.length)
+    const both = newGoals1.concat(newGoals2)
+    this.setState({
+      goals: both
+    })
+  }
+
   handleSignup = async (event, signupData) => {
     event.preventDefault();
     const currentUser = await signupUser(signupData);
@@ -147,6 +157,7 @@ class App extends Component {
           <Route path = '/goals' render = { (props) => {
             return <GoalsContainer 
               goals = {this.state.goals}
+              removeGoal = {this.removeGoal}
             />
           }} />
 

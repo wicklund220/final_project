@@ -46,7 +46,7 @@ export const userProfile = async(userData) => {
 // === Workout ===
 
 export const allWorkouts = async (id) => {
-    const response = await api.get(`/workout/${id}`);
+    const response = await api.get(`/workout/single/${id}`);
     console.log(response)
     return response.data
 }
@@ -55,6 +55,10 @@ export const postWorkout = async (workoutData) => {
     const response = await api.post(`/workout/1`, workoutData);
     console.log(response);
     return response.data
+}
+
+export const destroyWorkout = async (id) => {
+    await api.delete(`/workout/single/${id}`)
 }
 
 // === Goal ===

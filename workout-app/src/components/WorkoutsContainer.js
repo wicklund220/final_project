@@ -52,6 +52,16 @@ class WorkoutsContainer extends Component {
         this.props.history.push('/workout');
     }
 
+    // deleteWorkout = async (id) => {
+    //     await destroyWorkout(id);
+    //     const workouts = this.state.workouts;
+    //     const filterWorkouts = workouts.filter(workout => workout.id !== parseInt(id));
+    //     this.setState({
+    //         workouts: filterWorkouts
+    //     })
+    //     this.props.history.push('/workout')
+    // }
+
     render() {
         return(
             <div>
@@ -59,7 +69,8 @@ class WorkoutsContainer extends Component {
                 <section>
                    <Route exact path = '/workout' render = {(props) => {
                        console.log(props)
-                       return <Workouts workouts = {this.props.workouts}/>
+                       return <Workouts workouts = {this.props.workouts}
+                       />
                    }} />
                       <Route exact path = '/workout/single/:id' render = {(props) => {
                           console.log(this.state)
