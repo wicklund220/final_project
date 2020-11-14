@@ -52,6 +52,16 @@ class WorkoutsContainer extends Component {
         this.props.history.push('/workout');
     }
 
+    removeWorkout = (workoutId) => {
+        const userWorkouts = this.state.workouts;
+        const newWorkouts1 = userWorkouts.slice(0, workoutId);
+        const newWorkouts2 = userWorkouts.slice(workoutId + 1, userWorkouts.length);
+        const both = newWorkouts1.concat(newWorkouts2)
+        this.setState({
+            workouts: both
+        })
+      }
+
     // deleteWorkout = async (id) => {
     //     await destroyWorkout(id);
     //     const workouts = this.state.workouts;
@@ -67,18 +77,27 @@ class WorkoutsContainer extends Component {
             <div>
                 <h1>Your Workouts</h1>
                 <section>
-                   <Route exact path = '/workout' render = {(props) => {
+                    {this.state.workouts.map((workout, index) => {
+                        return <Workouts 
+                        removeWorkout = {this.removeWorkout}
+                        workout = {workout}
+                        key = {index}
+                        workoutId = {index}
+                        />
+                    })}
+                   {/* <Route exact path = '/workout' render = {(props) => {
                        console.log(props)
-                       return <Workouts workouts = {this.props.workouts}
+                       return <Workouts workouts = {this.state.workouts}
+                       removeWorkout = {this.removeWorkout}
                        />
-                   }} />
-                      <Route exact path = '/workout/single/:id' render = {(props) => {
+                   }} /> */}
+                      {/* <Route exact path = '/workout/single/:id' render = {(props) => {
                           console.log(this.state)
                         return <SingleWorkout
                         workouts={this.state.workouts}
                         workoutId={props.match.params.id}
                         />
-                    }} />
+                    }} /> */}
                    <Route exact path = '/workout/create' render = { (props) => {
                         return <CreateWorkout createWorkout = {this.createWorkout}/>
                          }} />

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { FilePicker } from 'evergreen-ui';
+
 import { Link } from 'react-router-dom'
 
 class SignupForm extends Component {
@@ -11,11 +13,12 @@ class SignupForm extends Component {
             password: '',
             name: '',
             bio: '',
+            picture: ''
         }
     }
 
     onChange = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -48,6 +51,11 @@ class SignupForm extends Component {
                 placeholder = 'bio'
                 onChange = {this.onChange}
                 />
+                {/* <FilePicker 
+                name = 'picture'
+                placeholder = 'select profile picture'
+                onChange = {this.onChange}
+                /> */}
                 <input type = 'submit' value = 'Sign Up' />
                 <p>Already a member?</p> <Link to='/login'>Login</Link>
             </form>

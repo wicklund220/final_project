@@ -1,19 +1,20 @@
 import React from 'react'
 
+import { Avatar, Button } from 'evergreen-ui'
+
 import { Link } from 'react-router-dom'
 
-import { Button } from 'evergreen-ui';
 
 function Header(props) {
     return(
         <div className = 'header'>
-            <Button><Link className ='link' to = '/'>Workout App</Link></Button>
+            <Link className ='link' to = '/'><h1>Workout App</h1></Link>
             <nav className='header-links'>
                 {props.currentUser && <Link className ='link' to = '/workout'>Workouts</Link>}
                 {props.currentUser && <Link className = 'link' to = '/goals'>Goals</Link>}
                 {props.currentUser && <Link className ='link' to = '/music'>Music</Link>}
                 {!props.currentUser ? <Link className ='link' to ='/login'>Log In</Link> : null}
-                {props.currentUser && <p>Welcome, <Link className ='link' to ='/profile'>{props.currentUser.username}</Link></p>}
+                {props.currentUser && <p>Welcome, {props.currentUser.name}<Link className ='link' to ='/profile'><Avatar name ={props.currentUser.name}/></Link></p>}
                 {props.currentUser && <Button onClick = {props.handleLogout}>Logout</Button>}
             </nav>
         </div>

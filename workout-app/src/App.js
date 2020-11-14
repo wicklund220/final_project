@@ -13,6 +13,7 @@ import Home from './components/Home';
 import SignupForm from './components/SignupForm'
 import LoginForm from './components/LoginForm'
 import Profile from './components/Profile'
+import Footer from './components/Footer'
 import { loginUser, signupUser, userProfile, verifyUser, allWorkouts } from './services/api_helper';
 
 class App extends Component {
@@ -71,6 +72,8 @@ class App extends Component {
       goals: both
     })
   }
+
+  
 
   handleSignup = async (event, signupData) => {
     event.preventDefault();
@@ -185,6 +188,7 @@ class App extends Component {
             renderProfile = {this.renderProfile}/>
           }} />
         </main>
+        <Footer/ >
       </div>
     );
   }
