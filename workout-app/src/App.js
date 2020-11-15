@@ -15,7 +15,7 @@ import LoginForm from './components/LoginForm'
 import Profile from './components/Profile'
 import Footer from './components/Footer';
 import EditProfile from './components/EditProfile'
-import { loginUser, signupUser, userProfile, verifyUser, allWorkouts } from './services/api_helper';
+import { loginUser, signupUser, userProfile, verifyUser, allWorkouts, postWorkout } from './services/api_helper';
 
 class App extends Component {
   constructor(props) {
@@ -147,6 +147,17 @@ class App extends Component {
    })
  }
 
+ createWorkout = async(event, workoutData) => {
+  event.preventDefault();
+  const newWorkout = await postWorkout(workoutData);
+  const workouts = this.state.workouts;
+  const newWorkouts = [...workouts, newWorkout]
+  this.setState({
+      workouts: newWorkouts
+  })
+  this.props.history.push('/workout');
+}
+
   render() {
     return (
       <div className="App">
@@ -156,7 +167,7 @@ class App extends Component {
           <Route exact path = '/' render = { (props) => {
             return <Home />
           }} />
-          <Route path='/workout' render = { (props) => {
+          <Route exact path='/workout' render = { (props) => {
             return <WorkoutsContainer
               workouts = {this.state.workouts}
               {...props}
@@ -166,8 +177,12 @@ class App extends Component {
           {/* <Route path = '/workouts/create' render = { (props) => {
             return <CreateWorkout onSubmit = {this.submitWorkout}/>
           }} /> */}
+
+          <Route exact path = '/workout/create' render = { (props) => {
+            return <CreateWorkout createWorkout = {this.createWorkout}/>
+          }} />
           
-          <Route path = '/goals' render = { (props) => {
+          <Route exact path = '/goals' render = { (props) => {
             return <GoalsContainer 
               goals = {this.state.goals}
               removeGoal = {this.removeGoal}
@@ -192,7 +207,7 @@ class App extends Component {
             currentUser = {this.state.currentUser}/>
           }} />
 
-          <Route path = '/profile' render = { (props) => {
+          <Route exact path = '/profile' render = { (props) => {
             return <Profile profile = {this.state.profile}
             currentUser = {this.state.currentUser} 
             renderProfile = {this.renderProfile}/>

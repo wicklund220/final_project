@@ -9,7 +9,8 @@ class EditProfile extends Component {
                 {
                     name: '',
                     username: '',
-                    bio: ''
+                    bio: '',
+                    picture: ''
                 }
             ]
         }
@@ -40,6 +41,11 @@ class EditProfile extends Component {
                 type = 'text'
                 name = 'bio'
                 // value = {this.props.currentUser.bio}
+                onChange = {this.onChange}
+                />
+                Picture: <input
+                type = 'text'
+                name = 'picture'
                 onChange = {this.onChange}
                 />
                 <input type = 'submit' value = 'Update' />

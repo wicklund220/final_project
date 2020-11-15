@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { Button } from 'evergreen-ui';
+
 const Profile = (props) => {
     console.log(props)
     return(
@@ -12,7 +14,7 @@ const Profile = (props) => {
             <p>username: {props.currentUser.username}</p>
             <p>bio: {props.currentUser.bio}</p>
             <img src = {props.currentUser.picture} />
-            <Link to ='/profile/edit'>Edit Profile</Link>
+            <Button><Link className = 'link' to ='/profile/edit'>Edit Profile</Link></Button>
         </div>
     )
 }

@@ -14,7 +14,8 @@ function Header(props) {
                 {props.currentUser && <Link className = 'link' to = '/goals'>Goals</Link>}
                 {props.currentUser && <Link className ='link' to = '/music'>Music</Link>}
                 {!props.currentUser ? <Link className ='link' to ='/login'>Log In</Link> : null}
-                {props.currentUser && <p>Welcome, {props.currentUser.name}<Link className ='link' to ='/profile'><Avatar name ={props.currentUser.name}/></Link></p>}
+                {props.currentUser && <p>Welcome, {props.currentUser.name}</p>}
+                {props.currentUser && <Link className ='link' to ='/profile'><Avatar name ={props.currentUser.name}/></Link>}
                 {props.currentUser && <Button onClick = {props.handleLogout}>Logout</Button>}
             </nav>
         </div>

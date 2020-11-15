@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 
 import { Link } from 'react-router-dom'
 
+import { Button } from 'evergreen-ui'
+
 import Goals from './Goals'
 
 class GoalsContainer extends Component {
@@ -28,8 +30,9 @@ class GoalsContainer extends Component {
                             goalId = {index}
                         />
                     })}
-                </section>
-                <Link to = '/goals/create'>Create Goal</Link>
+                </section><br/>
+                <Button><Link className ='link' to = '/goals/create'>Create Goal</Link></Button>
+                
             </div>
         )
     }

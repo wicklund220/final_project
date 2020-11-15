@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FilePicker } from 'evergreen-ui';
+import { FilePicker, Textarea, Button } from 'evergreen-ui';
 
 import { Link } from 'react-router-dom'
 
@@ -26,29 +26,36 @@ class SignupForm extends Component {
 
     render() {
         return(
-            <form onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
-                <input
+            <form className='sign-up' onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
+                <h2>Sign Up</h2>
+               <p>username </p> <input
                 type = 'text'
                 name = 'username'
                 placeholder = 'username'
                 onChange = {this.onChange}
                 />
-                <input
+                <p>password </p><input
                 type = 'password'
                 name = 'password'
                 placeholder = 'password'
                 onChange = {this.onChange}
                 />
-                <input
+                <p>name </p><input
                 type = 'text'
                 name = 'name'
                 placeholder = 'name'
                 onChange = {this.onChange}
                 />
-                <input
-                type = 'textarea'
+                <p>bio </p><Textarea
+                // type = 'textarea'
                 name = 'bio'
                 placeholder = 'bio'
+                onChange = {this.onChange}
+                />
+                <p>profile picture url </p><input
+                type = 'text'
+                name = 'picture'
+                placeholder = 'profile picture'
                 onChange = {this.onChange}
                 />
                 {/* <FilePicker 
@@ -56,7 +63,8 @@ class SignupForm extends Component {
                 placeholder = 'select profile picture'
                 onChange = {this.onChange}
                 /> */}
-                <input type = 'submit' value = 'Sign Up' />
+                {/* <input type = 'submit' value = 'Sign Up' /> */}
+                <Button onClick = {(event) => this.props.handleSignup(event, this.state)}>Sign up</Button>
                 <p>Already a member?</p> <Link to='/login'>Login</Link>
             </form>
         )

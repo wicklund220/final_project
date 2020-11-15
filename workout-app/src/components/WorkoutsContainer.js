@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import { Route, Link, withRouter } from 'react-router-dom'
 import { allWorkouts, postWorkout } from '../services/api_helper'
 
+import { Button } from 'evergreen-ui'
+
 import Workouts from './Workouts'
 
 import CreateWorkout from './CreateWorkout'
@@ -37,19 +39,16 @@ class WorkoutsContainer extends Component {
         })
     }
 
-    createWorkout = async(event, workoutData) => {
-        console.log(this.props)
-        event.preventDefault();
-        console.log(workoutData)
-        const newWorkout = await postWorkout(workoutData);
-        const workouts = this.state.workouts;
-        const newWorkouts = [...workouts, newWorkout]
-        this.setState({
-            workouts: newWorkouts
-        })
-        console.log(this.state.workouts);
-        this.props.history.push('/workout');
-    }
+    // createWorkout = async(event, workoutData) => {
+    //     event.preventDefault();
+    //     const newWorkout = await postWorkout(workoutData);
+    //     const workouts = this.state.workouts;
+    //     const newWorkouts = [...workouts, newWorkout]
+    //     this.setState({
+    //         workouts: newWorkouts
+    //     })
+    //     this.props.history.push('/workout');
+    // }
 
     removeWorkout = (workoutId) => {
         const userWorkouts = this.state.workouts;
@@ -73,7 +72,7 @@ class WorkoutsContainer extends Component {
 
     render() {
         return(
-            <div>
+            <div className='workout-wrapper'>
                 <h1>Your Workouts</h1>
                 <section>
                     {this.state.workouts.map((workout, index) => {
@@ -97,13 +96,16 @@ class WorkoutsContainer extends Component {
                         workoutId={props.match.params.id}
                         />
                     }} /> */}
-                   <Route exact path = '/workout/create' render = { (props) => {
+                   {/* <Route exact path = '/workout/create' render = { (props) => {
                         return <CreateWorkout createWorkout = {this.createWorkout}/>
-                         }} />
+                         }} /> */}
 
                  
                 </section>
-                <Link to = '/workout/create'>Create Workout</Link>
+                <br/>
+                <div>
+                    <Button><Link className='link' to = '/workout/create'>Create Workout</Link></Button>
+                </div>
             </div>
         )
     }

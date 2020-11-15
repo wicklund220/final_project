@@ -67,3 +67,14 @@ Main {
   background: darkgrey;
   width: 100vw;
 }
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+}
+
+.workout-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
