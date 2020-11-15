@@ -32,10 +32,9 @@ class App extends Component {
       ],
       goals: [
         {
-          title: '',
-          description: '',
-          // date: 12/12/2020,
-          date: '',
+          title: 'Lose 5 pounds',
+          description: 'Run 3 miles, 3 times per week',
+          date: 'January 2021',
           file: ''
         }
       ],

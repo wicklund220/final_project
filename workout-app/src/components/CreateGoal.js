@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
 
-import { TextInput, Textarea } from 'evergreen-ui';
+import { TextInput, Textarea, Button } from 'evergreen-ui';
 
 class CreateGoal extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            title: '',
-            description: '',
-            date: '',
+            title: 'Lose 5 pounds',
+            description: 'Run 3 miles, 3 times per week',
+            date: 'January 2021',
             file: ''
         }
     }
@@ -23,24 +23,25 @@ class CreateGoal extends Component {
 
     render() {
         return(
-            <form className ='goal-form' onSubmit = {(event) => {this.props.onSubmit(event, this.state)}}>
-                Goal Title<TextInput 
+            <form className ='single-item' onSubmit = {(event) => {this.props.onSubmit(event, this.state)}}>
+                <p>Goal</p><TextInput 
                 name = 'title'
                 placeholder = 'Goal'
                 onChange = {this.onChange}
                 />
-                Goal Description<Textarea
+                <p>Description</p><Textarea
                 name = 'description'
                 placeholder = 'Description'
                 onChange = {this.onChange} 
                 />
-                Target Date<TextInput
+                <p>Target Date</p><TextInput
                 name = 'date'
                 placeholder = 'Target Date'
                 onChange = {this.onChange}
-                />
+                /><br/><br/>
                 {/* <input type = 'file' name = 'file'/> */}
-                <input type='submit' value='Submit' />
+                {/* <input type='submit' value='Submit' /> */}
+                <Button onClick = {(event) => this.props.onSubmit(event, this.state)}>Submit</Button>
             </form>
         )
     }

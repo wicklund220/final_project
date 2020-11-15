@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import { TextInput, Textarea, Button } from 'evergreen-ui'
+
 class EditProfile extends Component {
     constructor(props){
         super(props);
@@ -25,30 +27,31 @@ class EditProfile extends Component {
 
     render() {
         return(
-            <form onSubmit = {(event) => this.props.editUser(event, this.state)}>
-                Name: <input
+            <form className='single-item' onSubmit = {(event) => this.props.editUser(event, this.state)}>
+                <p>Name</p> <TextInput
                 type = 'text'
                 name = 'name'
                 // value = {this.props.currentUser.name}
                 onChange = {this.onChange}
                 />
-                Username: <input
+                <p>username</p> <TextInput
                 type = 'text'
                 name = 'username'
                 onChange = {this.onChange}
                 />
-                Bio: <input
+                <p>bio</p> <TextInput
                 type = 'text'
                 name = 'bio'
                 // value = {this.props.currentUser.bio}
                 onChange = {this.onChange}
                 />
-                Picture: <input
+                <p>profile picture</p> <TextInput
                 type = 'text'
                 name = 'picture'
                 onChange = {this.onChange}
-                />
-                <input type = 'submit' value = 'Update' />
+                /><br/><br/>
+                {/* <input type = 'submit' value = 'Update' /> */}
+                <Button onClick = {(event) => this.props.editUser(event, this.state)}>Submit</Button>
             </form>
         )
     }

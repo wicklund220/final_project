@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import { Button } from 'evergreen-ui'
+import { Button, TextInput } from 'evergreen-ui'
 
 class CreateWorkout extends Component {
     constructor(props) {
@@ -29,29 +29,29 @@ class CreateWorkout extends Component {
 
     render() {
         return(
-            <form className='workout-form' onSubmit = {(event) => this.props.createWorkout(event, this.state)}>
-                <p>Lift</p> <input
+            <form className='single-item' onSubmit = {(event) => this.props.createWorkout(event, this.state)}>
+                <p>Lift</p> <TextInput
                 type = 'text'
                 name = 'name'
                 // className = 'lift'
                 placeholder = 'lift'
                 onChange = {this.onChange}
                 />
-                <p>Sets</p> <input
+                <p>Sets</p> <TextInput
                 type = 'number'
                 name = 'sets'
                 // className = 'lift'
                 placeholder = 'sets'
                 onChange = {this.onChange}
                 />
-                <p>Reps</p><input
+                <p>Reps</p><TextInput
                 type = 'number'
                 name = 'reps'
                 // className = 'lift'
                 placeholder = 'reps'
                 onChange = {this.onChange}
                 />
-                <p>Weight</p><input
+                <p>Weight</p><TextInput
                 type = 'number'
                 name = 'weight'
                 // className = 'lift'
