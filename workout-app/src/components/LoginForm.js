@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { TextInput, Button } from 'evergreen-ui'
+
 class LoginForm extends Component {
     constructor(props) {
         super(props);
@@ -21,24 +23,26 @@ class LoginForm extends Component {
 
     render() {
         return(
-            <form onSubmit = {(event) => this.props.handleLogin(event, this.state)}>
-                <input
-                type='text'
+            <form className ='single-item' onSubmit = {(event) => this.props.handleLogin(event, this.state)}>
+                <h2>Log In</h2>
+                <p>username</p><TextInput
+                // type='text'
                 name='username'
                 placeholder='username'
                 onChange={this.onChange}
                 />
-                <input
+                <p>password</p><input className ='password'
                 type='password'
                 name='password'
                 placeholder='password'
                 onChange={this.onChange}
-                />
-                <input type='submit' value='Log In'/>
+                /><br/><br/>
+                {/* <input type='submit' value='Log In'/> */}
+                <Button onClick = {(event) => this.props.handleLogin(event, this.state)}>Log In</Button>
                 
                 {!this.props.currentUser && 
                 <div>
-                    <p>Not a member? </p><Link to='/signup'>Sign Up</Link>
+                    <p>Not a member? </p><Button><Link className='link' to='/signup'>Sign Up</Link></Button>
                 </div>}
             </form>
         )

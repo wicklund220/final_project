@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FilePicker, Textarea, Button } from 'evergreen-ui';
+import { FilePicker, Textarea, Button, TextInput } from 'evergreen-ui';
 
 import { Link } from 'react-router-dom'
 
@@ -26,22 +26,22 @@ class SignupForm extends Component {
 
     render() {
         return(
-            <form className='sign-up' onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
+            <form className='single-item' onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
                 <h2>Sign Up</h2>
-               <p>username </p> <input
-                type = 'text'
+               <p>username </p> <TextInput
+                // type = 'text'
                 name = 'username'
                 placeholder = 'username'
                 onChange = {this.onChange}
                 />
-                <p>password </p><input
+                <p>password </p><input className='password'
                 type = 'password'
                 name = 'password'
                 placeholder = 'password'
                 onChange = {this.onChange}
                 />
-                <p>name </p><input
-                type = 'text'
+                <p>name </p><TextInput
+                // type = 'text'
                 name = 'name'
                 placeholder = 'name'
                 onChange = {this.onChange}
@@ -52,20 +52,20 @@ class SignupForm extends Component {
                 placeholder = 'bio'
                 onChange = {this.onChange}
                 />
-                <p>profile picture url </p><input
-                type = 'text'
+                <p>profile picture url </p><TextInput
+                // type = 'text'
                 name = 'picture'
                 placeholder = 'profile picture'
                 onChange = {this.onChange}
-                />
+                /><br/><br/>
                 {/* <FilePicker 
                 name = 'picture'
                 placeholder = 'select profile picture'
                 onChange = {this.onChange}
                 /> */}
                 {/* <input type = 'submit' value = 'Sign Up' /> */}
-                <Button onClick = {(event) => this.props.handleSignup(event, this.state)}>Sign up</Button>
-                <p>Already a member?</p> <Link to='/login'>Login</Link>
+                <Button className = 'signup-button' onClick = {(event) => this.props.handleSignup(event, this.state)}>Sign up</Button>
+                <p>Already a member?</p> <Button><Link className ='link' to='/login'>Login</Link></Button>
             </form>
         )
     }

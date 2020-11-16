@@ -24,10 +24,10 @@ class App extends Component {
     this.state = {
       workouts: [
         {
-          name: 'lift1',
-          sets: 0,
-          reps: 0,
-          weight: 0
+          name: 'Squat',
+          sets: 4,
+          reps: 10,
+          weight: 315
         }
       ],
       goals: [
@@ -43,15 +43,15 @@ class App extends Component {
     }
   }
 
-  // submitWorkout = (event, info) => {
-  //   event.preventDefault();
-  //   const workouts = this.state.workouts;
-  //   workouts.push(info);
-  //   this.setState({
-  //     workouts: workouts
-  //   })
-  //   this.props.history.push('/workouts')
-  // }
+  submitWorkout = (event, info) => {
+    event.preventDefault();
+    const workouts = this.state.workouts;
+    workouts.push(info);
+    this.setState({
+      workouts: workouts
+    })
+    this.props.history.push('/workouts')
+  }
 
   submitGoal = (event, info) => {
     event.preventDefault();
@@ -70,6 +70,16 @@ class App extends Component {
     const both = newGoals1.concat(newGoals2)
     this.setState({
       goals: both
+    })
+  }
+
+  removeWorkout = (workoutId) => {
+    const userWorkouts = this.state.workouts;
+    const newWorkouts1 = userWorkouts.slice(0, workoutId);
+    const newWorkouts2 = userWorkouts.slice(workoutId + 1, userWorkouts.length);
+    const both = newWorkouts1.concat(newWorkouts2)
+    this.setState({
+        workouts: both
     })
   }
 
@@ -170,6 +180,7 @@ class App extends Component {
             return <WorkoutsContainer
               workouts = {this.state.workouts}
               {...props}
+              removeWorkout = {this.removeWorkout}
             />
           }} />
 
@@ -178,7 +189,9 @@ class App extends Component {
           }} /> */}
 
           <Route exact path = '/workout/create' render = { (props) => {
-            return <CreateWorkout createWorkout = {this.createWorkout}/>
+            return <CreateWorkout createWorkout = {this.createWorkout} 
+            submitWorkout = {this.submitWorkout}
+            />
           }} />
           
           <Route exact path = '/goals' render = { (props) => {

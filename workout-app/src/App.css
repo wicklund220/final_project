@@ -1,10 +1,8 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap');
 
 .App {
   text-align: center;
-  /* height: 100vh; */
+  min-height: 100vh;
 }
 
 Main {
@@ -15,7 +13,6 @@ Main {
 
 .header-links {
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-around;
   align-items: center;
 }
@@ -52,13 +49,11 @@ Main {
   object-fit: cover;
   background-repeat: no-repeat;
   display: flex;
-  flex-grow: 1;
   justify-content: center;
 }
 
 .home h1 {
   color: white;
-  /* text-align: center */
 }
 
 .footer {
@@ -84,4 +79,17 @@ Main {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+  text-align: center;
+}
+
+.password {
+  width: 97%;
+  height: 28px;
+  border: 1px solid rgba(128, 128, 128, 0.397);
+  border-radius: 3px;
+}
+
+.signup-button {
+  text-align: center;
+  width: 80px;
 }

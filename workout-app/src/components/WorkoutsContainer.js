@@ -39,26 +39,26 @@ class WorkoutsContainer extends Component {
         })
     }
 
-    // createWorkout = async(event, workoutData) => {
-    //     event.preventDefault();
-    //     const newWorkout = await postWorkout(workoutData);
-    //     const workouts = this.state.workouts;
-    //     const newWorkouts = [...workouts, newWorkout]
-    //     this.setState({
-    //         workouts: newWorkouts
-    //     })
-    //     this.props.history.push('/workout');
-    // }
-
-    removeWorkout = (workoutId) => {
-        const userWorkouts = this.state.workouts;
-        const newWorkouts1 = userWorkouts.slice(0, workoutId);
-        const newWorkouts2 = userWorkouts.slice(workoutId + 1, userWorkouts.length);
-        const both = newWorkouts1.concat(newWorkouts2)
+    createWorkout = async(event, workoutData) => {
+        event.preventDefault();
+        const newWorkout = await postWorkout(workoutData);
+        const workouts = this.state.workouts;
+        const newWorkouts = [...workouts, newWorkout]
         this.setState({
-            workouts: both
+            workouts: newWorkouts
         })
-      }
+        this.props.history.push('/workout');
+    }
+
+    // removeWorkout = (workoutId) => {
+    //     const userWorkouts = this.state.workouts;
+    //     const newWorkouts1 = userWorkouts.slice(0, workoutId);
+    //     const newWorkouts2 = userWorkouts.slice(workoutId + 1, userWorkouts.length);
+    //     const both = newWorkouts1.concat(newWorkouts2)
+    //     this.setState({
+    //         workouts: both
+    //     })
+    //   }
 
     // deleteWorkout = async (id) => {
     //     await destroyWorkout(id);
@@ -75,9 +75,9 @@ class WorkoutsContainer extends Component {
             <div className='workout-wrapper'>
                 <h1>Your Workouts</h1>
                 <section>
-                    {this.state.workouts.map((workout, index) => {
+                    {this.props.workouts.map((workout, index) => {
                         return <Workouts 
-                        removeWorkout = {this.removeWorkout}
+                        removeWorkout = {this.props.removeWorkout}
                         workout = {workout}
                         key = {index}
                         workoutId = {index}
