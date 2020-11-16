@@ -61,6 +61,14 @@ Main {
   bottom: 0;
   background: darkgrey;
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px 10px 25px;
+}
+
+#contact {
+  margin-right: 50px;
 }
 
 .sign-up {

@@ -16,6 +16,7 @@ import Profile from './components/Profile'
 import Footer from './components/Footer';
 import EditProfile from './components/EditProfile'
 import { loginUser, signupUser, userProfile, verifyUser, allWorkouts, postWorkout } from './services/api_helper';
+import Email from './components/Email'
 
 class App extends Component {
   constructor(props) {
@@ -229,8 +230,12 @@ class App extends Component {
             return <EditProfile editUser = {this.editUser} 
             currentUser = {this.state.currentUser}/>
           }} />
+
+          <Route path ='/contact' render = { (props) => {
+            return <Email />
+          }} />
         </main>
-        <Footer/ >
+        <Footer/>
       </div>
     );
   }
