@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FilePicker, Textarea, Button, TextInput } from 'evergreen-ui';
+import { FilePicker, Textarea, Button, TextInputField, TextInput } from 'evergreen-ui';
 
 import { Link } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ class SignupForm extends Component {
             password: '',
             name: '',
             bio: '',
-            picture: ''
+            picture: '',
         }
     }
 
@@ -24,11 +24,14 @@ class SignupForm extends Component {
         })
     }
 
+   
+
+
     render() {
         return(
             <form className='single-item' onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
                 <h2>Sign Up</h2>
-               <p>username </p> <TextInput
+               <p>username </p> <TextInputField
                 // type = 'text'
                 name = 'username'
                 placeholder = 'username'
@@ -39,8 +42,9 @@ class SignupForm extends Component {
                 name = 'password'
                 placeholder = 'password'
                 onChange = {this.onChange}
+                required
                 />
-                <p>name </p><TextInput
+                <p>name </p><TextInputField
                 // type = 'text'
                 name = 'name'
                 placeholder = 'name'

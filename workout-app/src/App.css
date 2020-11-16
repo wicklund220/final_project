@@ -76,6 +76,10 @@ Main {
   flex-direction: column;
 }
 
+.profile-picture {
+  border-radius: 100%;
+}
+
 .workout-wrapper {
   display: flex;
   flex-direction: column;

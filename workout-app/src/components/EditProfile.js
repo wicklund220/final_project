@@ -34,11 +34,11 @@ class EditProfile extends Component {
                 // value = {this.props.currentUser.name}
                 onChange = {this.onChange}
                 />
-                <p>username</p> <TextInput
+                {/* <p>username</p> <TextInput
                 type = 'text'
                 name = 'username'
                 onChange = {this.onChange}
-                />
+                /> */}
                 <p>bio</p> <TextInput
                 type = 'text'
                 name = 'bio'

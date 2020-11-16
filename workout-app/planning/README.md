@@ -27,7 +27,7 @@ The purpose of this app will be to allow users to create and keep track of their
 10. user is interested in keeping track of their various workouts over time to see how much they've progressed in their fitness journey
 
 # MVP
-Create a fully functional react app that allows users to create and store workouts and goals, with a node.js/express back end to remember user information. Also include a spotify API to allow users to listen to music while using the app. App will have full CRUD functionality. The app will also have the appearance of a professional website/app. I plan to implement Material UI as my technology not learned in class. 
+Create a fully functional react app that allows users to create and store workouts and goals, with a node.js/express back end to remember user information. Also include a spotify API to allow users to listen to music while using the app. App will have full CRUD functionality. The app will also have the appearance of a professional website/app. I plan to implement Evergreen UI and an email submission form as my technologies not learned in class. 
 
 # Stretch Goals
 Allow users to see other users workouts

@@ -40,7 +40,8 @@ class App extends Component {
         }
       ],
       currentUser: [],
-      profile: null
+      profile: null,
+      error: ''
     }
   }
 
@@ -88,7 +89,6 @@ class App extends Component {
     event.preventDefault();
     let currentUser = this.state.currentUser;
     currentUser = info
-    // currentUser.push(info);
     this.setState({
       currentUser: currentUser
     })
@@ -99,6 +99,7 @@ class App extends Component {
     event.preventDefault();
     const currentUser = await signupUser(signupData);
     // console.log(currentUser);
+  
     this.setState({
       currentUser: currentUser
     })
