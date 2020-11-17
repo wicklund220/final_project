@@ -34,13 +34,13 @@ class EditProfile extends Component {
                 // value = {this.props.currentUser.name}
                 onChange = {this.onChange}
                 />
-                <p>bio</p> <TextInput
+                <p>About Me</p> <TextInput
                 type = 'text'
                 name = 'bio'
                 // value = {this.props.currentUser.bio}
                 onChange = {this.onChange}
                 />
-                <p>profile picture</p> <TextInput
+                <p>Profile Picture</p> <TextInput
                 type = 'text'
                 name = 'picture'
                 onChange = {this.onChange}

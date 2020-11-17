@@ -23,20 +23,20 @@ class App extends Component {
 
     this.state = {
       workouts: [
-        {
-          name: 'Squat',
-          sets: 4,
-          reps: 10,
-          weight: 315
-        }
+        // {
+        //   name: 'Squat',
+        //   sets: 4,
+        //   reps: 10,
+        //   weight: 315
+        // }
       ],
       goals: [
-        {
-          title: 'Lose 5 pounds',
-          description: 'Run 3 miles, 3 times per week',
-          date: 'January 2021',
-          file: ''
-        }
+        // {
+        //   title: 'Lose 5 pounds',
+        //   description: 'Run 3 miles, 3 times per week',
+        //   date: 'January 2021',
+        //   file: ''
+        // }
       ],
       currentUser: [],
       profile: null,

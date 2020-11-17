@@ -31,31 +31,31 @@ class SignupForm extends Component {
         return(
             <form className='single-item' onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
                 <h2>Sign Up</h2>
-               <p>username </p> <TextInputField
+               <p>Username </p> <TextInputField
                 type = 'text'
                 name = 'username'
                 placeholder = 'username'
                 onChange = {this.onChange}
                 />
-                <p>password </p><input className='password'
+                <p>Password </p><input className='password'
                 type = 'password'
                 name = 'password'
                 placeholder = 'password'
                 onChange = {this.onChange}
                 />
-                <p>name </p><TextInputField
+                <p>Name </p><TextInputField
                 // type = 'text'
                 name = 'name'
                 placeholder = 'name'
                 onChange = {this.onChange}
                 />
-                <p>bio </p><Textarea
+                <p>About Me </p><Textarea
                 // type = 'textarea'
                 name = 'bio'
                 placeholder = 'bio'
                 onChange = {this.onChange}
                 />
-                <p>profile picture url </p><TextInput
+                <p>Profile Picture URL </p><TextInput
                 // type = 'text'
                 name = 'picture'
                 placeholder = 'profile picture'
