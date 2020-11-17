@@ -4,14 +4,18 @@
 
 .App {
   text-align: center;
-  min-height: 100vh;
+  min-height: 115vh;
   margin-top: -25px;
+  background-image: url('https://i.imgur.com/jE6EwDy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 Main {
   display: flex;
   flex-grow: 1;
   justify-content: center;
+
 }
 
 .header-links {
@@ -81,11 +85,11 @@ Main {
   border-radius: 10px;
 }
 
-.workout-wrapper {
+/* .workout-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 .single-item {
   border: 3px solid darkgrey;
@@ -93,6 +97,8 @@ Main {
   padding: 10px;
   margin: 10px;
   text-align: center;
+  background: white;
+  max-height: 100vh;
 }
 
 .password {
@@ -105,4 +111,12 @@ Main {
 .signup-button {
   text-align: center;
   width: 80px;
+}
+
+.list-title {
+  color: white;
+  background-color: black;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 5px;
 }

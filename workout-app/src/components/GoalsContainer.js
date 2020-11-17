@@ -20,7 +20,7 @@ class GoalsContainer extends Component {
     render() {
         return(
             <div>
-                <h1>Your Goals</h1>
+                <h1 className='list-title'>Your Goals</h1>
                 <section>
                     {this.props.goals.map((goal, index) => {
                         return <Goals 

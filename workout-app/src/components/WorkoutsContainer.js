@@ -53,7 +53,7 @@ class WorkoutsContainer extends Component {
     render() {
         return(
             <div className='workout-wrapper'>
-                <h1>Your Workouts</h1>
+                <h1 className='list-title'>Your Workouts</h1>
                 <section>
                     {this.props.workouts.map((workout, index) => {
                         return <Workouts 
@@ -67,10 +67,8 @@ class WorkoutsContainer extends Component {
 
                  
                 </section>
-                <br/>
-                <div>
                     <Button><Link className='link' to = '/workout/create'>Create Workout</Link></Button>
-                </div>
+                
             </div>
         )
     }

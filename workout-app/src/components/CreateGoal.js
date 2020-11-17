@@ -7,10 +7,10 @@ class CreateGoal extends Component {
         super(props)
 
         this.state = {
-            title: 'Lose 5 pounds',
-            description: 'Run 3 miles, 3 times per week',
-            date: 'January 2021',
-            file: ''
+            // title: 'Lose 5 pounds',
+            // description: 'Run 3 miles, 3 times per week',
+            // date: 'January 2021',
+            // file: ''
         }
     }
 
