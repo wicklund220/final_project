@@ -21,12 +21,13 @@ const Email = () => {
   
     return (
       <form className="single-item" onSubmit={sendEmail}>
+        <h4>Questions, comments, or concerns? Send us an email</h4>
         <input type="hidden" name="contact_number" 
         />
-        <p>Name</p>
+        <p>Your Name</p>
         <input type="text" name="from_name" placeholder='name'
         />
-        <p>Email</p>
+        <p>Your Email</p>
         <input type="email" name="from_email" placeholder='email'
         />
         <p>Message</p>

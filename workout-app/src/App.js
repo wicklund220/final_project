@@ -15,7 +15,7 @@ import LoginForm from './components/LoginForm'
 import Profile from './components/Profile'
 import Footer from './components/Footer';
 import EditProfile from './components/EditProfile'
-import { loginUser, signupUser, userProfile, verifyUser, allWorkouts, postWorkout } from './services/api_helper';
+import { loginUser, signupUser, userProfile, verifyUser, allWorkouts, postWorkout, postGoal } from './services/api_helper';
 import Email from './components/Email'
 
 class App extends Component {
@@ -169,6 +169,17 @@ class App extends Component {
   this.props.history.push('/workout');
 }
 
+createGoal = async(event, goalData) => {
+  event.preventDefault();
+  const newGoal = await postGoal(goalData);
+  const goals = this.state.goals;
+  const newGoals = [...goals, newGoal]
+  this.setState({
+    goals: newGoals
+  })
+  this.props.history.push('/goals')
+}
+
   render() {
     return (
       <div className="App">
@@ -185,10 +196,6 @@ class App extends Component {
               removeWorkout = {this.removeWorkout}
             />
           }} />
-
-          {/* <Route path = '/workouts/create' render = { (props) => {
-            return <CreateWorkout onSubmit = {this.submitWorkout}/>
-          }} /> */}
 
           <Route exact path = '/workout/create' render = { (props) => {
             return <CreateWorkout createWorkout = {this.createWorkout} 

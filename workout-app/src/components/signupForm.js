@@ -42,7 +42,6 @@ class SignupForm extends Component {
                 name = 'password'
                 placeholder = 'password'
                 onChange = {this.onChange}
-                required
                 />
                 <p>name </p><TextInputField
                 // type = 'text'

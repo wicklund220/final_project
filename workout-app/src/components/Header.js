@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 function Header(props) {
     return(
         <div className = 'header'>
-            <Link className ='link' to = '/'><h1>Workout App</h1></Link>
+            <Link className ='link' to = '/'><h1>FitTracker</h1></Link>
             <nav className='header-links'>
                 {props.currentUser && <Link className ='link' to = '/workout'>Workouts</Link>}
                 {props.currentUser && <Link className = 'link' to = '/goals'>Goals</Link>}
