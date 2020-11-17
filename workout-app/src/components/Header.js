@@ -12,7 +12,6 @@ function Header(props) {
             <nav className='header-links'>
                 {props.currentUser && <Link className ='link' to = '/workout'>Workouts</Link>}
                 {props.currentUser && <Link className = 'link' to = '/goals'>Goals</Link>}
-                {props.currentUser && <Link className ='link' to = '/music'>Music</Link>}
                 {!props.currentUser ? <Link className ='link' to ='/login'>Log In</Link> : null}
                 {props.currentUser && <p>Welcome, {props.currentUser.name}</p>}
                 {props.currentUser && <Link className ='link' to ='/profile'><Avatar name ={props.currentUser.name}/></Link>}

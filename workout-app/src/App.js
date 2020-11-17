@@ -8,7 +8,6 @@ import WorkoutsContainer from './components/WorkoutsContainer'
 import GoalsContainer from './components/GoalsContainer'
 import CreateWorkout from './components/CreateWorkout';
 import CreateGoal from './components/CreateGoal';
-import Music from './components/Music';
 import Home from './components/Home';
 import SignupForm from './components/SignupForm'
 import LoginForm from './components/LoginForm'
@@ -212,11 +211,7 @@ createGoal = async(event, goalData) => {
 
           <Route path = '/goals/create' render = { (props) => {
             return <CreateGoal onSubmit = {this.submitGoal}/>
-          }} />
-
-          <Route path = '/music' render = { (props) => {
-            return <Music />
-          }} />     
+          }} />   
 
           <Route path = '/signup' render = { (props) => {
             return <SignupForm handleSignup = {this.handleSignup}
