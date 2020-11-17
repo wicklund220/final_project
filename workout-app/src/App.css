@@ -78,7 +78,7 @@ Main {
 }
 
 .profile-picture {
-  border-radius: 100%;
+  border-radius: 10px;
 }
 
 .workout-wrapper {

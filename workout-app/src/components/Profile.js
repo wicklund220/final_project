@@ -7,10 +7,10 @@ import { Button } from 'evergreen-ui';
 const Profile = (props) => {
     console.log(props)
     return(
-        <div>
+        <div className='single-item'>
             <h1>{props.currentUser.name}</h1>
             <img className='profile-picture' src = {props.currentUser.picture} />
-            <p>username: {props.currentUser.username}</p>
+            {/* <p>username: {props.currentUser.username}</p> */}
             <p>bio: {props.currentUser.bio}</p>
             <Button><Link className = 'link' to ='/profile/edit'>Edit Profile</Link></Button>
         </div>
