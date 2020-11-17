@@ -1,20 +1,20 @@
 # final_project
 
-# Project Description:
-The purpose of this app will be to allow users to create and keep track of their workouts, set goals for themselves to achieve, and stay motivated by listening to their favorite playlists through spotify. Users will create their workouts by adding lifts, the number of sets for each lift, the number of reps or amount of time for each set, and finally the weight and/or speed each set requires. Users will also also be able to set goals for themselves which can be anything from how much weight they want to gain or lose, a schedule for training to run a marathon, or simply a weekly schedule reminding them to workout along with an optional target date if the user would like to attain the goal by a certain time. 
+# Project Description
+The purpose of this app will be to allow users to create and keep track of their workouts, set goals for themselves to achieve. Users will create their workouts by adding lifts, the number of sets for each lift, the number of reps or amount of time for each set, and finally the weight and/or speed each set requires. Users will also also be able to set goals for themselves which can be anything from how much weight they want to gain or lose, a schedule for training to run a marathon, or simply a weekly schedule reminding them to workout along with an optional target date if the user would like to attain the goal by a certain time. 
 
 # Screenshot of App
 ![app](https://i.imgur.com/v3qTzyBl.jpg)
 
-# Technologies Used:
-Javascript
-React
-NodeJS/Express
-Postgres
-EmailJS
+# Technologies Used
+Javascript, 
+React, 
+NodeJS/Express, 
+Postgres, 
+EmailJS, 
 EvergreenUI
 
-# Installation Instructions:
+# Installation Instructions
 Create a new front end repo in github, clone to desired file location in the terminal. Create the react app using npx create-react-app, and then install necessary dependcies through node package manager (react-router-dom, emailjs, evergreenui). Open app in code editor of choice, import installed dependencies.
 For the back end, the process is similar. Create a new back end repo in github, clone to desired file location in terminal (preferrebly in the same parent folder as front end folder). Install necessary dependencies (npm, node js, express, postgres, sequelize, bcrypt, dotenv, cookie-parser, jsonwebtoken). Open backend app in code editor of choice, import dependencies. 
 
@@ -49,3 +49,6 @@ Allow users to see other users workouts
 Add workout reminders to outlook or similar calendar application from app
 Import Google maps to show user where nearby gyms are located
 Allow users to upload progress photos onto their profile and/or goals page with a file uploader rather than a url
+
+# Lessons Learned/Things to Improve Upon
+I would have liked to have implemented a spotify widget, and at one point I had a single playlist working, but I wasn't able to get it to work for more than one when it came time to deploy and I had other issues that took priority so I omitted it from the app completely for the time being. I was not able to get the file selector working, so I went with an email sender, but a file selector would be a greater challenge to tackle in the future. 
