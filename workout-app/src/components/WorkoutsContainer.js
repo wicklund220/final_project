@@ -7,9 +7,7 @@ import { Button } from 'evergreen-ui'
 
 import Workouts from './Workouts'
 
-import CreateWorkout from './CreateWorkout'
 
-import SingleWorkout from './SingleWorkout'
 
 class WorkoutsContainer extends Component {
     constructor(props) {
@@ -83,22 +81,7 @@ class WorkoutsContainer extends Component {
                         workoutId = {index}
                         />
                     })}
-                   {/* <Route exact path = '/workout' render = {(props) => {
-                       console.log(props)
-                       return <Workouts workouts = {this.state.workouts}
-                       removeWorkout = {this.removeWorkout}
-                       />
-                   }} /> */}
-                      {/* <Route exact path = '/workout/single/:id' render = {(props) => {
-                          console.log(this.state)
-                        return <SingleWorkout
-                        workouts={this.state.workouts}
-                        workoutId={props.match.params.id}
-                        />
-                    }} /> */}
-                   {/* <Route exact path = '/workout/create' render = { (props) => {
-                        return <CreateWorkout createWorkout = {this.createWorkout}/>
-                         }} /> */}
+                  
 
                  
                 </section>
