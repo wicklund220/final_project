@@ -26,18 +26,20 @@ class LoginForm extends Component {
             <form className ='single-item' onSubmit = {(event) => this.props.handleLogin(event, this.state)}>
                 <h2>Log In</h2>
                 <p>Username</p><TextInput
-                // type='text'
+                type='text'
                 name='username'
                 placeholder='username'
                 onChange={this.onChange}
+                required
                 />
-                <p>Password</p><input className ='password'
+                <p>Password</p><TextInput
                 type='password'
                 name='password'
                 placeholder='password'
                 onChange={this.onChange}
+                required
                 /><br/><br/>
-                <Button onClick = {(event) => this.props.handleLogin(event, this.state)}>Log In</Button>
+                <Button>Log In</Button>
                 
                 {!this.props.currentUser && 
                 <div>
