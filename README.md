@@ -42,7 +42,7 @@ For the back end, the process is similar. Create a new back end repo in github, 
 10. user is interested in keeping track of their various workouts over time to see how much they've progressed in their fitness journey
 
 # MVP
-Create a fully functional react app that allows users to create and store workouts and goals, with a node.js/express back end to remember user information. Also include a spotify API to allow users to listen to music while using the app. App will have full CRUD functionality. The app will also have the appearance of a professional website/app. I plan to implement Material UI as my technology not learned in class. 
+Create a fully functional react app that allows users to create and store workouts and goals, with a node.js/express back end to remember user information. App will have CRUD functionality. The app will also have the appearance of a professional website/app. I plan to implement EmailJS and Evergreen UI as my technologies not learned in class. 
 
 # Stretch Goals
 Allow users to see other users workouts
