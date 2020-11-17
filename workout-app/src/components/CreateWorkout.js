@@ -16,12 +16,7 @@ class CreateWorkout extends Component {
 
     onChange = (event) => {
         event.preventDefault();
-        // console.log(event);
-        // if(event.target.className === 'lift') {
-        //     this.setState({
-        //         lift: {[event.target.name]: event.target.value}
-        //     })
-        // }
+        
         this.setState({
             [event.target.name]: event.target.value
         })

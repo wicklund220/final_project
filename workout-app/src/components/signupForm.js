@@ -32,10 +32,9 @@ class SignupForm extends Component {
             <form className='single-item' onSubmit = {(event) => this.props.handleSignup(event, this.state)}>
                 <h2>Sign Up</h2>
                <p>username </p> <TextInputField
-                // type = 'text'
+                type = 'text'
                 name = 'username'
                 placeholder = 'username'
-                required
                 onChange = {this.onChange}
                 />
                 <p>password </p><input className='password'
@@ -62,12 +61,6 @@ class SignupForm extends Component {
                 placeholder = 'profile picture'
                 onChange = {this.onChange}
                 /><br/><br/>
-                {/* <FilePicker 
-                name = 'picture'
-                placeholder = 'select profile picture'
-                onChange = {this.onChange}
-                /> */}
-                {/* <input type = 'submit' value = 'Sign Up' /> */}
                 <Button className = 'signup-button' onClick = {(event) => this.props.handleSignup(event, this.state)}>Sign up</Button>
                 <p>Already a member?</p> <Button><Link className ='link' to='/login'>Login</Link></Button>
             </form>

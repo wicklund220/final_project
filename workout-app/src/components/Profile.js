@@ -8,8 +8,6 @@ const Profile = (props) => {
     console.log(props)
     return(
         <div>
-            {/* <h1>{props.profile.data}</h1> */}
-            {/* <button onClick = {props.renderProfile}>Get Profile Info</button> */}
             <h1>{props.currentUser.name}</h1>
             <img className='profile-picture' src = {props.currentUser.picture} />
             <p>username: {props.currentUser.username}</p>

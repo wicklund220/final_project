@@ -37,7 +37,6 @@ class LoginForm extends Component {
                 placeholder='password'
                 onChange={this.onChange}
                 /><br/><br/>
-                {/* <input type='submit' value='Log In'/> */}
                 <Button onClick = {(event) => this.props.handleLogin(event, this.state)}>Log In</Button>
                 
                 {!this.props.currentUser && 

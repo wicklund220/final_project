@@ -39,8 +39,7 @@ class CreateGoal extends Component {
                 placeholder = 'Target Date'
                 onChange = {this.onChange}
                 /><br/><br/>
-                {/* <input type = 'file' name = 'file'/> */}
-                {/* <input type='submit' value='Submit' /> */}
+              
                 <Button onClick = {(event) => this.props.onSubmit(event, this.state)}>Submit</Button>
             </form>
         )

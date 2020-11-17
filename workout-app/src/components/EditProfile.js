@@ -34,11 +34,6 @@ class EditProfile extends Component {
                 // value = {this.props.currentUser.name}
                 onChange = {this.onChange}
                 />
-                {/* <p>username</p> <TextInput
-                type = 'text'
-                name = 'username'
-                onChange = {this.onChange}
-                /> */}
                 <p>bio</p> <TextInput
                 type = 'text'
                 name = 'bio'
@@ -50,7 +45,6 @@ class EditProfile extends Component {
                 name = 'picture'
                 onChange = {this.onChange}
                 /><br/><br/>
-                {/* <input type = 'submit' value = 'Update' /> */}
                 <Button onClick = {(event) => this.props.editUser(event, this.state)}>Submit</Button>
             </form>
         )

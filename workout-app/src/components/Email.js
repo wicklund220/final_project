@@ -35,7 +35,6 @@ const Email = () => {
         /><br/><br/>
         <input type="submit" value="Send" 
         />
-        {/* <Button onClick= {sendEmail}>Send</Button> */}
       </form>
     );
   }
